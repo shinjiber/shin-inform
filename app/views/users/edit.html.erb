@@ -1,0 +1,16 @@
+<% if logged_in? %>
+
+<div class='row'>
+  <aside class='col-md-4'>
+    
+    <%= form_for(@user) do |f| %>
+    <div class='form-group'>
+      <%= f.text_area :content, class: 'form-control', rows: 5 %>
+    </div>
+      <%= f.submit 'create', class: 'btn btn-primary btn-block' %>
+    <% end %>
+    
+  </aside>
+    <%= link_to 'Go back user details', @user %>
+</div>
+<% end %>

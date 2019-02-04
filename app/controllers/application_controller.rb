@@ -15,6 +15,12 @@ class ApplicationController < ActionController::Base
 
     def authenticate
       return if logged_in?
-      redirect_to root_path, alert: "ログインしてください"
+      redirect_to root_path, alert: "You need to login."
+    end
+    
+    def require_user_logged_in
+      unless logged_in?
+        redirect_to root_url
+      end
     end
 end

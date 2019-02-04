@@ -1,5 +1,13 @@
-<div class='center jumbotron'>
-  <div class='text-center'>
-    <h1>Welcome to Shin-Inform</h1>
-  </div>
-</div>
+<% if logged_in? %>
+<h1>Hello, <%=  current_user.user_name %>!!</h1>
+ <%= link_to 'User details', user_path(current_user) %>
+ <%= link_to 'Information', infos_url %>
+ <P>Go to the user Ranking!</P>
+ <P>Go to the infos Ranking!</P>
+<% else %>
+<div class=‘center jumbotron’>
+ <div class=‘text-center’>
+  <h1>Welcome to Shin-Inform</h1>
+ </div>
+ </div>
+<% end %>
