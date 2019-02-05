@@ -3,10 +3,14 @@ class InfosController < ApplicationController
   
   
   def index
-    @infos = Info.all.page(params[:page])
+    @infos = current_user.infos.order('created_at DESC').page(params[:page])
   end
   
   def show
+  end
+
+  def new
+    @info = current_user.infos.build
   end
 
   def create
@@ -41,4 +45,5 @@ class InfosController < ApplicationController
     params.require(:info).permit(:title, :content)
   end
   
+ 
 end

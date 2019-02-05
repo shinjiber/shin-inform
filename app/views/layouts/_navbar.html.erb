@@ -12,8 +12,21 @@
       </div>
       <div class='collapse navbar-collapse' id='bs-examle-navbar-collapse-1'>
         <ul class='nav navbar-nav navbar-right'>
-          <li><a href='#'>Signup</a></li>
-          <li><a href='#'>Login</a></li>
+          <% if logged_in? %>
+          <li>
+            <%= link_to 'My profile', user_path(current_user) %>
+          </li>
+          <li>
+            <%= link_to 'Post info', new_info_path %>
+          </li>
+          <li>
+            <%= link_to 'Loguout', '/signout' %>
+          </li>
+          <% else %>
+          <li>
+            <%= link_to 'Twitter Login', '/auth/twitter' %>
+          </li>
+          <% end %>
         </ul>
       </div>
     </div>

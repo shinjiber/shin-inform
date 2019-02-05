@@ -25,5 +25,9 @@ test:
   database: shin-inform
 
 production:
-  <<: *default
+  adapter: postgresql
+  encording: unicode
+  pool: 5
   database: shin-inform
+  username: shin-inform
+  password:  <%= ENV['SHIN-INFORM_DATABASE_PASSWORD'] %>

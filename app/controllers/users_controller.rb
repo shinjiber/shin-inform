@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @infos = current_user.infos.order('created_at DESC').page(params[:page])
   end
   
   def new

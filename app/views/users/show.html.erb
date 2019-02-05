@@ -27,5 +27,13 @@
     <div>
       <%= current_user.followers_count %>
     </div>
+    
+    <% @infos.each do |info| %>
+    <li class='media'>
+      <%= info.id %>
+      <%= info.title %>
+    </li>
+    <% end %>
+  
   
 <% end %>
