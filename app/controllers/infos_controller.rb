@@ -7,6 +7,7 @@ class InfosController < ApplicationController
   end
   
   def show
+    @info = current_user.infos.find(params[:id])
   end
 
   def new
@@ -26,9 +27,19 @@ class InfosController < ApplicationController
   end
   
   def edit
+    @info = current_user.infos.find(params[:id])
   end
 
   def update
+    @info = current_user.infos.find(params[:id])
+    
+    if @info.update(info_params)
+      flash[:success] = 'Updated successfully'
+      redirect_to @info
+    else
+      flash.now[:danger] = 'Could not update!'
+      render :edit
+    end
   end
   
   def destroy

@@ -1,0 +1,31 @@
+<% if logged_in? %>
+
+<h1><%= @info.title%></h1>
+
+<div class='row'>
+  <aside class='col-md-4'>
+    <%= form_for(@info) do |f| %>
+    <div class='form-group'>
+    <ul>
+      <li>
+        <h3>Title</h3>
+    <%= f.text_area :title, class: 'form-control' %>
+       </li>
+       
+       <li>
+        <h3>Content</h3>
+    <%= f.text_field :content, class: 'form-control' %>
+       </li>
+      </ul>
+      
+    </div>
+    <%= f.submit 'Post', class: 'btn btn-primary btn-block' %>
+    
+    <% end %>
+
+  </aside>
+</div>
+
+<%= link_to 'Back', user_path %>
+
+<% end %>

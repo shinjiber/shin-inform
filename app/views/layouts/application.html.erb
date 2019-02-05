@@ -20,11 +20,6 @@
     
     <%= render 'layouts/navbar' %>
     
-    <% if logged_in? %>
-      <%= link_to 'Logout', '/signout' %>
-    <% else %>
-      <%= link_to 'Twitter Login', '/auth/twitter' %>
-    <% end %>
     
     <div class='container'>
     <%= render 'layouts/flash_messages'%>

@@ -30,7 +30,7 @@
     
     <% @infos.each do |info| %>
     <li class='media'>
-      <%= info.id %>
+    <%= link_to info.id, info %>
       <%= info.title %>
     </li>
     <% end %>
