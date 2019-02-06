@@ -17,4 +17,12 @@ class User < ApplicationRecord
     
     has_many :infos
     
+    def can_post?
+        if followers_count < 100
+            return true
+        else
+            return false
+        end
+    end
+    
 end

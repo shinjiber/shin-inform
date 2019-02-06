@@ -1,5 +1,10 @@
 <% if logged_in? %>
-
+  <% if current_user.can_post? %>
+  
+  <h1>You don't have the right to post the information!</h1>
+  
+  <% else %>
+  
 <div class='row'>
   <aside class='col-md-4'>
     <%= form_for(@info) do |f| %>
@@ -20,4 +25,5 @@
   </aside>
 </div>
 
+  <% end %>
 <% end %>

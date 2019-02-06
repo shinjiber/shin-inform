@@ -3,7 +3,7 @@ class InfosController < ApplicationController
   
   
   def index
-    @infos = current_user.infos.order('created_at DESC').page(params[:page])
+    @infos = Info.all
   end
   
   def show
@@ -16,6 +16,9 @@ class InfosController < ApplicationController
 
   def create
     @info = current_user.infos.build(info_params)
+    
+    redirect_to root_path unless current_user.can_post?
+    
     if @info.save
       flash[:success] = 'Posted info successfully'
       redirect_to infos_url
