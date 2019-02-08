@@ -17,8 +17,27 @@ class User < ApplicationRecord
     
     has_many :infos
     
+    #score function
+    has_many :scores
+    has_many :scored_infos, through: :score, source: :info
+    
+    def score_on(info)
+        self.scores.find_or_create_by(info_id: info_id)
+    end
+    
+    def score_off(info)
+        score = self.scores.find_by(info_id: info_id)
+        score.destroy if score
+    end
+    
+    def scored?(info)
+        self.scored_infos.include?(info)
+    end
+    
+    
+    
     def can_post?
-        if followers_count < 100
+        if followers_count < 50
             return true
         else
             return false

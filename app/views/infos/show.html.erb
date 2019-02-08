@@ -4,4 +4,17 @@
 
 <h2><%= @info.content%></h2>
 
+
+<div class='field'>
+  <%= form_for(@score, url: {controller: :scores, action: :create}) do |f| %>
+  <%= hidden_field_tag :info_id, @info.id %>
+  <label><%= f.radio_button :score, 1, :checked => true %>1</label>
+  <label><%= f.radio_button :score, 2 %>2</label>
+  <label><%= f.radio_button :score, 3 %>3</label>
+  <label><%= f.radio_button :score, 4 %>4</label>
+  <label><%= f.radio_button :score, 5 %>5</label>
+  <label><%= f.submit 'Post', class: 'btn btn-primary btn-block' %></label>
+  <% end %>
+</div>
+
 <%= link_to 'Edit', edit_info_path %>

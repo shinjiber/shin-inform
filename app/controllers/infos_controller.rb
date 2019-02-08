@@ -8,6 +8,7 @@ class InfosController < ApplicationController
   
   def show
     @info = current_user.infos.find(params[:id])
+    @score = current_user.scores.build
   end
 
   def new

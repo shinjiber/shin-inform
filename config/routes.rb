@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :users
   
   resources :infos
+  
+  resources :scores, only: [:create, :destroy]
 end
