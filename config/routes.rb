@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'info_ranking/index'
   root 'toppage#index'
   
   get '/auth/:provider/callback', to: 'sessions#create'
