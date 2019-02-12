@@ -1,5 +1,5 @@
 class InfoRankingController < ApplicationController
   def index
-    @score_average = Score.average(:score)
+    info_ranking = Score.group(:score_id).order('sum')
   end
 end
