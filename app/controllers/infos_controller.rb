@@ -18,15 +18,15 @@ class InfosController < ApplicationController
   def create
     @info = current_user.infos.build(info_params)
     
-    redirect_to root_path unless current_user.can_post?
+    redirect_to root_url unless current_user.can_post?
     
     if @info.save
       flash[:success] = 'Posted info successfully'
-      redirect_to infos_url
+      #redirect_to infos_url
     else
       @info = current_user.infos.order('created_at DESC').page(params[:page])
       flash[:danger] = 'Posted unsuccessfully'
-      render 'infos/index'
+      #render 'infos/index'
     end
   end
   

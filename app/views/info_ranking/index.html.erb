@@ -1,25 +1,26 @@
-<% if @infos.present? %>
-<div class='row'>
-  
-  <% @infos.each_with_index do |info, index| %>
-  
-  <div class='col-md-3 col-sm-4 col-xs-12'>
-    <div class='panel panel-default'>
-      <div class='panel-body'>
-        <p>
-          <%= link_to info.title %>
-        </p>
-      </div>
-      
-      <div class='panel-footer'>
-        <p class='text-center'>
-          <%= index+1 %>
-          位：
-          <%= @info_score_ranking[info.id] %>
-        </p>
-      </div>
-    </div>
-  </div>
-  <% end %>
+
+
+<% @infos_ranking.each.with_index(1) do |(info_id, average_score), index|  %>
+
+
+<% info = Info.find(info_id) %>
+
+<div>
+
+<p>
+<%= index %>
+位
+</p>
+<p>
+TITLE:
+<%= info.title  %>
+</p>
+<p>
+SCORE:
+<%= average_score %>
+</p>
 </div>
+
+
+
 <% end %>

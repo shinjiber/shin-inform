@@ -1,5 +1,9 @@
 <% if logged_in? %>
 
+<h1 class='title-gradation-updown'>The details of
+<%= current_user.user_name %>
+</h1>
+
 <div class='row'>
   <aside class='col-xs-4'>
     <div class='panel panel-default'>
@@ -17,9 +21,13 @@
   </aside>
 </div>
 
-    <div>
+    <div class='box26'>
+      <span class='box-title'>Profile Content</span>
+      <p>
       <%= current_user.content %>
+      </p>
     </div>
+    
     <div>
       <%= link_to 'Edit', edit_user_url(current_user) %>
     </div>
@@ -29,10 +37,10 @@
     </div>
     
     <% @infos.each do |info| %>
-    <li class='media'>
+    <p class='media'>
     <%= link_to info.id, info %>
       <%= info.title %>
-    </li>
+    </p>
     <% end %>
   
   
