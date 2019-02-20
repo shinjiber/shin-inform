@@ -1,15 +1,17 @@
+<h1 class='title-gradation-updown'>User List</h1>
+
 <% if logged_in? %>
 <div class='container'>
   <div class='row'>
   
-  <% @users.each do |user| %>
+<% @users.each do |user| %>
   
   <span class='glyphicon glyphicon-user'></span>
-  <p class='btn btn-link'>
-  <%= link_to user.user_name, user_url(:id) %>
-  </p>
+    <p class='btn btn-link'>
+<%= link_to user.user_name, user_url(:id) %>
+    </p>
   
-  <% end %>
+<% end %>
   </div>
 </div>
 <% end %>

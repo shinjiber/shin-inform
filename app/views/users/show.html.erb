@@ -18,30 +18,41 @@
         ' alt=''>
       </div>
     </div>
-  </aside>
-</div>
-
-    <div class='box26'>
-      <span class='box-title'>Profile Content</span>
+    
+     <div class='box26'>
+       <span class="box-title">Introduction</span>
+        <p>
+<%= current_user.content %>
+        </p>
+        
+        <div class="btn-border-bottom">
+<%= link_to 'Edit', edit_user_url(current_user) %>
+        </div>
+      </div>
+    
+  
+    <div class="box26">
+      <span class="box-title">Followers</span>
       <p>
-      <%= current_user.content %>
+<%= current_user.followers_count %>
       </p>
     </div>
     
-    <div>
-      <%= link_to 'Edit', edit_user_url(current_user) %>
-    </div>
   
-    <div>
-      <%= current_user.followers_count %>
+  <h2>Your Info</h2>  
+    <% @infos.each do |info| %>
+    
+    <div class='media'>
+        <p class='infos-box'>Info Title
+<%= link_to info.id, info %>:<br>
+<%= info.title %>
+        </p>
     </div>
     
-    <% @infos.each do |info| %>
-    <p class='media'>
-    <%= link_to info.id, info %>
-      <%= info.title %>
-    </p>
     <% end %>
   
-  
+    
+  </aside>
+</div>
+
 <% end %>

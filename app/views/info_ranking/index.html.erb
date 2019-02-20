@@ -1,3 +1,4 @@
+<h1 class='title-gradation-updown'>Infos Ranking</h1>
 
 
 <% @infos_ranking.each.with_index(1) do |(info_id, average_score), index|  %>
@@ -5,20 +6,17 @@
 
 <% info = Info.find(info_id) %>
 
-<div>
-
-<p>
-<%= index %>
-位
-</p>
-<p>
-TITLE:
-<%= info.title  %>
-</p>
-<p>
-SCORE:
-<%= average_score %>
-</p>
+<div class="box28">
+  <span class="box-title">
+<%= index %>位
+  </span>
+    <h3>
+    TITLE:
+    <%= info.title  %>
+    <br>
+    SCORE:
+    <%= average_score %>
+    </h3>
 </div>
 
 

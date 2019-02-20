@@ -1,9 +1,10 @@
+<h1 class='title-gradation-updown'>All Infos</h1>
+
 <% @infos.each do |info| %>
 
-<ul>
-    <li>
-        <%= link_to info.title, info %>
-    </li>
-</ul>
-
+<div class="box24">
+    <p>
+<%= link_to info.title, info %>
+    </p>
+</div>
 <% end %>
