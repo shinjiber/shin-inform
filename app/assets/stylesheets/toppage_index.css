@@ -6,8 +6,12 @@
   text-align: center;
 }
 
-.amatic-sc{
+.amatic-sc {
   font-family: 'Londrina Shadow', cursive;
   font-size: 70px;
+  padding: 50px;
 }
 
+.amatic-sc h2 {
+  font-size: 50px; 
+}
