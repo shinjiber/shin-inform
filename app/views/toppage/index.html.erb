@@ -1,37 +1,40 @@
+
+<div>
 <% if logged_in? %>
-<div class='container'>
-  <div class='row'>
-    <div class='col-md-6'>
-   
-     <h1 class='title-gradation-updown'>Hello,
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-6'>
+     
+       <h1 class='title-gradation-updown'>Hello,
 <%= current_user.user_name %>!!
-    </h1>
-    
-    <h2 class='btn-text-3d glyphicon glyphicon-user'>
+      </h1>
+      
+      <h2 class='btn-text-3d glyphicon glyphicon-user'>
 <%= link_to 'User details', user_path(current_user) %>
-    </h2>
-
-    <h2 class='btn-text-3d glyphicon glyphicon-send'> 
+      </h2>
+  
+      <h2 class='btn-text-3d glyphicon glyphicon-send'> 
 <%= link_to 'Information', infos_url %>
-    </h2>
-
-    <h2 class='btn-text-3d glyphicon glyphicon-sort-by-order'> 
+      </h2>
+  
+      <h2 class='btn-text-3d glyphicon glyphicon-sort-by-order'> 
 <%= link_to 'Infos ranking', info_ranking_index_url %>
-    </h2>
-
-    <h2 class='btn-text-3d glyphicon glyphicon-th-list'> 
+      </h2>
+  
+      <h2 class='btn-text-3d glyphicon glyphicon-th-list'> 
 <%= link_to 'User List', users_url %>
-    </h2>
-
+      </h2>
+  
 <% else %>
-
-<div class=‘center jumbotron’>
-  <div class=‘text-center’>
-    <h1>Welcome to Shin-Inform</h1>
+  
+  <div class='center'>
+    <div id='text-center'>
+      <h1 class='amatic-sc'><span>Welcome to Shin-Inform</span></h1>
+    </div>
   </div>
-</div>
-
+  
 <% end %>
+      </div>
     </div>
   </div>
 </div>

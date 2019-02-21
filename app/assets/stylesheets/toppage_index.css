@@ -1,0 +1,13 @@
+.container-background-image {
+  background-image: url(skyscene.JPG);
+}
+
+#text-center {
+  text-align: center;
+}
+
+.amatic-sc{
+  font-family: 'Londrina Shadow', cursive;
+  font-size: 70px;
+}
+

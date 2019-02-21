@@ -1,9 +1,16 @@
+<div class="box26">
+<span class="box-title">Info Title</span>
+  <h2>
+<%= @info.title %>
+  </h2>
+</div>
 
-
-<h1><%= @info.title %></h1>
-
-<h2><%= @info.content%></h2>
-
+<div class="box26">
+<span class="box-title">Info content</span>
+  <p>
+<%= @info.content%>
+  </p>
+</div>
 
 <div class='field'>
   <%= form_for(@score, url: {controller: :scores, action: :create}) do |f| %>

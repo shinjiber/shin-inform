@@ -1,3 +1,8 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
 
 .title-gradation-updown {
   font-size: 50px;
@@ -80,7 +85,13 @@
     background: #FFF;
     color: #95ccff;
     font-weight: bold;
+    text-align: center;
 }
+
+.box-title {
+  text-align: center;
+}
+
 .box26 p {
     font-size: 15px;
     text-align: center;
@@ -137,3 +148,5 @@
     margin: 0; 
     padding: 0;
 }
+
+

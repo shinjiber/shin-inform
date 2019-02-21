@@ -6,10 +6,12 @@
   
 <% @users.each do |user| %>
   
+  <div class='box26'>
   <span class='glyphicon glyphicon-user'></span>
     <p class='btn btn-link'>
 <%= link_to user.user_name, user_url(:id) %>
     </p>
+  </div>
   
 <% end %>
   </div>
